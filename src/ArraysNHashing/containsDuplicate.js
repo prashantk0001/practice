@@ -24,6 +24,16 @@ function containsDuplicate2(nums) {
 function containsDuplicate(nums) {
     return nums.length !== new Set(nums).size;
 }
+// O(n) using set
+function containsDuplicate3(nums) {
+    const setNums = new Set();
+    for (let i = 0; i < nums.length; i++) {
+        if (setNums.has(nums[i])) {
+            return true;
+        }
+    }
+    return false;
+}
 //case 1
 const nums = [1, 2, 3, 1];
 console.log("case 1 ", containsDuplicate(nums));
